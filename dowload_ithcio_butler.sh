@@ -1,5 +1,5 @@
 
-#!/bin/zsh
+#!/bin/bash
 
 mkdir butler
 cd butler
