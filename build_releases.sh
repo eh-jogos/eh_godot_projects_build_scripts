@@ -60,12 +60,11 @@ do
 				;&
 			"yes" | "y" | "Y" | "Yes" | "YES" )
 				# This is to accept other modifiers in case you want
-				# to have separate scripts for building steam releases
-				# or building itch.io releases for example. Just add them as cases below
+				# to have separate scripts for building steam releases or export in other
+				# configurations then each export profile having its own folder.
+				# (See the "project/cosmic_abyss" branch for an example)
+				# Just add these other options as cases below:
 				case $export_output in
-					"steam")
-						./build_steam_releases.sh $game_version $profile $filename $include_debug
-						;;
 					*)
 						./build_standalone_releases.sh $game_version $profile $filename $include_debug
 						;;
