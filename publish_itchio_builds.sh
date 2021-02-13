@@ -11,10 +11,10 @@ cd ..
 
 # Fill in the itch game address as in "user/game"
 # ex: game url "https://eh-jogos.itch.io/cosmicabyss" -> game addres "eh-jogos/cosmicabyss"
-itch_game_adress=""
+itch_game_adress="eh-jogos/shaderexperiments"
 
 # Fill the project name you're using on the "build_standalone_releases.sh" script 
-project_name=""
+project_name="ShaderExperiments"
 
 project_settings="project.godot"
 export_configs="export_presets.cfg"
