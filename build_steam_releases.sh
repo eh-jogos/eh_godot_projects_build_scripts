@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+# -- WARNING -- -- WARNING -- -- WARNING -- -- WARNING -- -- WARNING -- -- WARNING -- -- WARNING -- -- WARNING -- 
+# This script is highly personalized to my uses and to how I build my depots on steam, so I don't expect it to work 
+# for other projects nor did I try to generalize it. For example, I use zshell in my personal machine and I have a
+# function to manage and choose godot versions to open, and the "godot-version" variable is expecting that to exist.
+# But I do hope this may server as an example of some kind, and feel free to contact me if you have any questions.
+
 # enters the folder this script is in
 cd "$(dirname "$0")"
 # go to previous folder, which is expected to be the godot project folder
