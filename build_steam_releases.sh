@@ -1,4 +1,10 @@
 #!/bin/zsh
+
+# enters the folder this script is in
+cd "$(dirname "$0")"
+# go to previous folder, which is expected to be the godot project folder
+cd ..
+
 version=$1
 profile=$2
 filename=$3
