@@ -12,11 +12,11 @@ include_debug=$4
 
 # Fill the path to Godot binary you're using for this project, 
 # or the command you use to open godot from terminal
-godot_path=""
+godot_path="/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.3-stable_x11.64"
 
 # Fill in your project name, the same way you want the exported folder to be named. 
 # The folder name will be project name folowed by profile name. ex. CoolProjectWindows64
-project_name=""
+project_name="ghgo20-MoonShot"
 
 
 echo
