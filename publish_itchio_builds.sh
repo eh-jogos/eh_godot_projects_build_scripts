@@ -11,10 +11,10 @@ cd ..
 
 # Fill in the itch game address as in "user/game"
 # ex: game url "https://eh-jogos.itch.io/cosmicabyss" -> game addres "eh-jogos/cosmicabyss"
-itch_game_adress=""
+itch_game_adress="eh-jogos/cosmicabyss"
 
 # Fill the project name you're using on the "build_standalone_releases.sh" script 
-project_name=""
+project_name="CosmicAbyss"
 
 project_settings="project.godot"
 export_configs="export_presets.cfg"
@@ -65,18 +65,23 @@ esac
 function push_linux {
 	echo $itch_game_adress
 	./butler push --userversion=$game_version $base_builds_path/$project_name"Linux32" $itch_game_adress\:linux32
+	./butler push --userversion=$game_version $base_builds_path/$project_name"Linux32_demo" $itch_game_adress\:linux32_demo
 	./butler push --userversion=$game_version $base_builds_path/$project_name"Linux64" $itch_game_adress\:linux64
+	./butler push --userversion=$game_version $base_builds_path/$project_name"Linux64_demo" $itch_game_adress\:linux64_demo
 }
 
 function push_windows {
 	echo $itch_game_adress
 	./butler push --userversion=$game_version $base_builds_path/$project_name"Windows32" $itch_game_adress\:windows32
+	./butler push --userversion=$game_version $base_builds_path/$project_name"Windows32_demo" $itch_game_adress\:windows32_demo
 	./butler push --userversion=$game_version $base_builds_path/$project_name"Windows64" $itch_game_adress\:windows64
+	./butler push --userversion=$game_version $base_builds_path/$project_name"Windows64_demo" $itch_game_adress\:windows64_demo
 }
 
 function push_osx {
 	echo $itch_game_adress
 	./butler push --userversion=$game_version $base_builds_path/$project_name"OSX" $itch_game_adress\:osx-universal
+	./butler push --userversion=$game_version $base_builds_path/$project_name"OSX_demo" $itch_game_adress\:osx-universal_demo
 }
 
 function push_html {
