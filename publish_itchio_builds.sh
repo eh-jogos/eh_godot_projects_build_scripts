@@ -9,8 +9,12 @@ cd "$(dirname "$0")"
 # go to previous folder, which is expected to be the godot project folder
 cd ..
 
-itch_game_adress=eh-jogos/a-cup-to-the-moon
-project_name="ghgo20-MoonShot"
+# Fill in the itch game address as in "user/game"
+# ex: game url "https://eh-jogos.itch.io/cosmicabyss" -> game addres "eh-jogos/cosmicabyss"
+itch_game_adress=""
+
+# Fill the project name you're using on the "build_standalone_releases.sh" script 
+project_name=""
 
 project_settings="project.godot"
 export_configs="export_presets.cfg"
