@@ -1,47 +1,50 @@
 #!/bin/bash
 
-# enters the folder this script is in
-cd "$(dirname "$0")"
-# go to previous folder, which is expected to be the godot project folder
-cd ..
+# CONSTANTS AND VARIABLES DEFINITIONS -------------------------------------------------------------------------------------
 
 version=$1
 profile=$2
 filename=$3
 include_debug=$4
 
-# Fill the path to Godot binary you're using for this project, 
-# or the command you use to open godot from terminal
-godot_path=""
+# Imports
+ORIGINAL_DIRECTORY=$(pwd)
+cd "$(dirname "$0")" || exit
+# shellcheck disable=SC1091
+source _config.sh
 
-# Fill in your project name, the same way you want the exported folder to be named. 
-# The folder name will be project name folowed by profile name. ex. CoolProjectWindows64
-project_name=""
+# END CONSTANTS AND VARIABLES DEFINITIONS ---------------------------------------------------------------------------------
 
 
-echo
-echo "Building Standalone release for: $profile"
-echo "Game Version is: $version"
+# FUNCTION DEFINITIONS ----------------------------------------------------------------------------------------------------
 
-project_path=$(pwd)
-base_builds_path="$(dirname $project_path)/GameBuilds"
+# END OF FUNCTION DEFINITIONS ---------------------------------------------------------------------------------------------
 
-echo "###########################################################"
+
+# SCRIPT EXECUTION --------------------------------------------------------------------------------------------------------
+
+change_directory "$PROJECT_FOLDER"
+
+echo -e "\nBuilding Standalone release for: $CYAN$profile$RESET"
+echo -e "Game Version is: $GREEN$version$RESET"
+
+echo -e "###########################################################\n"
 unquoted_profile=$(sed -e 's/^"//' -e 's/"$//' <<< $profile)
-final_path_release=$base_builds_path/$version/Release/$project_name$unquoted_profile/
-final_path_debug=$base_builds_path/$version/Debug/$project_name$unquoted_profile/
+final_path_release=$BASE_BUILDS_PATH/$BUILD_FOLDER/Release/$PROJECT_NAME$unquoted_profile/
+final_path_debug=$BASE_BUILDS_PATH/$BUILD_FOLDER/Debug/$PROJECT_NAME$unquoted_profile/
 
-echo "Exporting $unquoted_profile Release to $final_path_release"
-mkdir -p $final_path_release
-$godot_path --export $unquoted_profile $final_path_release$filename
+echo -e "Exporting $CYAN$unquoted_profile$RESET Release to $GREEN$final_path_release$RESET\n"
+mkdir -p "$final_path_release"
+$GODOT_PATH --export "$unquoted_profile" "$final_path_release$filename"
 
 if [[ $include_debug = "true" ]]
 then
-	echo "Exporting $unquoted_profile Debug to $final_path_debug"
-	mkdir -p $final_path_debug
-	$godot_path --export-debug $unquoted_profile $final_path_debug$filename
+	echo -e "\nExporting $CYAN$unquoted_profile$RESET Release to $GREEN$final_path_debug$RESET\n"
+	mkdir -p "$final_path_debug"
+	$GODOT_PATH --export-debug "$unquoted_profile" "$final_path_debug$filename"
 fi
 
-echo "Exporting $unquoted_profile Finished"
-echo "###########################################################"
-echo
+echo -e "\nExporting $CYAN$unquoted_profile$RESET Finished"
+echo -e "###########################################################\n"
+
+# END OF SCRIPT EXECUTION -------------------------------------------------------------------------------------------------
