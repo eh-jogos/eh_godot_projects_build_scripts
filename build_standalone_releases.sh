@@ -35,13 +35,13 @@ final_path_debug=$BASE_BUILDS_PATH/$BUILD_FOLDER/Debug/$PROJECT_NAME$unquoted_pr
 
 echo -e "Exporting $CYAN$unquoted_profile$RESET Release to $GREEN$final_path_release$RESET\n"
 mkdir -p "$final_path_release"
-$GODOT_PATH --export "$unquoted_profile" "$final_path_release$filename"
+$GODOT_PATH --no-window --export "$unquoted_profile" "$final_path_release$filename"
 
 if [[ $include_debug = "true" ]]
 then
-	echo -e "\nExporting $CYAN$unquoted_profile$RESET Release to $GREEN$final_path_debug$RESET\n"
+	echo -e "\nExporting $CYAN$unquoted_profile$RESET Debug version to $GREEN$final_path_debug$RESET\n"
 	mkdir -p "$final_path_debug"
-	$GODOT_PATH --export-debug "$unquoted_profile" "$final_path_debug$filename"
+	$GODOT_PATH --no-window --export-debug "$unquoted_profile" "$final_path_debug$filename"
 fi
 
 echo -e "\nExporting $CYAN$unquoted_profile$RESET Finished"

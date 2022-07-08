@@ -17,11 +17,11 @@ PROJECT_FOLDER="$BUILD_SCRIPTS_FOLDER/.."
 
 # Fill the path to Godot binary you're using for this project, 
 # or the command you use to open godot from terminal
-GODOT_PATH="../.binaries/godot/godot_steam_windows_64.exe"
+GODOT_PATH="path_to_godot_executable"
 
 # Fill in your project name, the same way you want the exported folder to be named. 
 # The folder name will be project name folowed by profile name. ex. CoolProjectWindows64
-PROJECT_NAME="MonsterOutbreak"
+PROJECT_NAME="ProjectName"
 
 # The base name for the executable file of the game. Platform specific extensions will be added later
 # Defaults to the same as the PROJECT_NAME but can be changed to whatever you want.
@@ -30,7 +30,7 @@ GAME_FILENAME="$PROJECT_NAME"
 
 # Fill in the itch game address as in "user/game"
 # ex: game url "https://eh-jogos.itch.io/cosmicabyss" -> game addres "eh-jogos/cosmicabyss"
-ITCH_GAME_ADDRESS="gamemuncher/monster-outbreak"
+ITCH_GAME_ADDRESS="itch_username/project_address"
 
 # This is the path in your disk where the scripts should export the games
 # This folder will be used as a base folder and the script wil create other folders in it, based
